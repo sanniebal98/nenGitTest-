@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ff</title>
+</head>
+<body>
+    <p>factory functions</p>
+</body>
+</html>
+<script>
+    // //Algemene definitie van een website (de blauwdruk)
+    // const website = {
+    //     shownaam: function (){
+    //         return `De naam van deze site is ${this.name}`;
+    //     }
+    // };
+    // // Factory function 'site_fact' kan nieuwe website-objecten genereren
+    // // Hoe werkt onderstaande regel?
+    // const site_fact = (name) => Object.assign(Object.create(website), {name:
+    //     name});
+    // // Genereer een nieuwe site
+    // const coolsite = site_fact('CoolSite');
+    // // Toon de naam
+    // console.log(coolsite.shownaam());
+    // console.log(coolsite);
+
+
+
+    //////////////////////////////////////////////
+
+
+
+    const logregel = {
+        show : function () {
+            return `${this.datum}, ${this.regel}`
+        }
+    };
+
+
+    const logregel_fact = (datum, regel) => Object.assign(Object.create(logregel), {datum:datum , regel:regel});
+
+    const x = logregel_fact(new Date(),'is de Datum');
+    console.log(x.show());
+</script>
